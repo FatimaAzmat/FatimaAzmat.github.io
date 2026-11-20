@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fatima Azmat · Researcher</title>
+<meta name="description" content="Generalist researcher turning data into tools that help people, across education, environment, and behavioral research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --beige:#f2ece0; --beige2:#e8e0d0; --sage:#a3b48f; --sage-deep:#7f946b;
+  --choc:#3a2a22; --choc-text:#2d211b; --muted:#6c5e52; --line:#d3c8b4;
+  --serif:"Fraunces",Georgia,serif; --sans:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--beige);color:var(--choc-text);font-family:var(--sans);font-size:1.05rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
+
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:baseline;padding:1.6rem 0}
+.bar .name{font-family:var(--serif);font-size:1.15rem;text-decoration:none}
+.bar nav a{margin-left:1.8rem;text-decoration:none;font-weight:500;background:linear-gradient(var(--sage-deep),var(--sage-deep)) 0 100%/0 2px no-repeat;padding-bottom:3px;transition:background-size .2s}
+.bar nav a:hover{background-size:100% 2px}
+
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center;padding:3.5rem 0 5rem}
+.intro.nophoto{grid-template-columns:1fr}
+.intro .status{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.6rem;padding:.35rem .95rem;border:1.5px solid var(--sage-deep);border-radius:999px;font-weight:500;font-size:.95rem}
+.intro .status::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sage-deep)}
+.intro h1{font-size:clamp(2.8rem,6.5vw,5.2rem);line-height:1.02;margin-bottom:1.4rem}
+.intro .tagline{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.25;max-width:24ch;margin:0 0 1.4rem}
+.intro .lede{font-size:1.15rem;color:var(--muted);max-width:50ch;margin:0}
+.portrait{margin:0}
+.portrait .frame{border-radius:170px 170px 14px 14px;overflow:hidden;background:var(--sage);aspect-ratio:3/4}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+
+/* experience: a real sequence, so a timeline */
+.exp{padding:1rem 0 6rem}
+.exp h2{font-size:clamp(1.9rem,4vw,2.8rem);max-width:20ch;margin-bottom:3rem}
+.timeline{list-style:none;margin:0;padding:0 0 0 2rem;border-left:2px solid var(--sage)}
+.timeline li{position:relative;display:grid;grid-template-columns:1fr auto;gap:1.5rem;padding:0 0 2.6rem}
+.timeline li::before{content:"";position:absolute;left:calc(-2rem - 7px);top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--beige);border:3px solid var(--sage-deep)}
+.timeline h3{font-size:1.4rem;margin:0 0 .15rem}
+.timeline .org{color:var(--muted);margin:0 0 .6rem;font-weight:500}
+.timeline p.what{margin:0;max-width:62ch}
+.timeline .dates{font-size:.88rem;color:var(--muted);white-space:nowrap;padding-top:.5rem}
+
+/* projects */
+.projects{background:var(--choc);color:var(--beige);padding:5.5rem 0 6rem}
+.projects h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.6rem}
+.projects .sub{color:#c9bca7;margin:0 0 3rem}
+.proj{background:var(--sage);color:var(--choc-text);border-radius:10px;padding:1.6rem;display:flex;gap:2rem;align-items:stretch;margin-bottom:1.5rem}
+.proj:nth-of-type(even){flex-direction:row-reverse}
+.proj .shot{flex:1 1 45%;background:var(--beige);border-radius:6px;display:grid;place-items:center;min-height:260px;overflow:hidden}
+.proj .shot img{max-width:100%;max-height:320px;display:block}
+.proj .body{flex:1 1 55%;display:flex;flex-direction:column;justify-content:center}
+.proj h3{font-size:clamp(1.5rem,2.6vw,1.9rem);line-height:1.15;margin-bottom:.5rem}
+.proj .tag{margin:0 0 .8rem;font-weight:500;color:#44553a}
+.proj p.desc{margin:0 0 1.2rem}
+.proj .links a{font-weight:600;margin-right:1.3rem;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--choc)}
+.proj .links a:hover{text-decoration-color:var(--beige)}
+
+/* contact */
+.contact{padding:5rem 0 3rem}
+.contact h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:1.2rem}
+.contact .elsewhere a{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.8rem);margin-right:2rem;text-decoration-color:var(--sage-deep);text-decoration-thickness:3px;text-underline-offset:6px}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+
+@media (max-width:780px){
+  .intro{grid-template-columns:1fr;gap:2.5rem}
+  .portrait{max-width:300px}
+  .timeline li{grid-template-columns:1fr;gap:.2rem}
+  .timeline .dates{order:-1;padding-top:0}
+  .proj,.proj:nth-of-type(even){flex-direction:column;gap:1.3rem}
+  .bar nav a{margin-left:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="bar">
+    <a class="name" href="#">Fatima Azmat</a>
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <section class="intro">
+    <div>
+      <p class="status">Open to new roles</p>
+      <h1>Fatima Azmat.</h1>
+      <p class="tagline">A generalist researcher turning data into tools that help people.</p>
+      <p class="lede">I care about social impact. I've worked in labs that run randomized trials and policy evaluations across education, environment, and behavioral research, and I turn what they find into recommendations people can use.</p>
+    </div>
+    <figure class="portrait">
+      <div class="frame">
+        <img src="photo.jpg" alt="Fatima Azmat" onerror="var f=this.closest('figure');f.parentNode.classList.add('nophoto');f.remove()">
+      </div>
+    </figure>
+  </section>
+
+  <section class="exp" id="experience">
+    <h2>Where I've worked and studied.</h2>
+    <ol class="timeline">
+      <li>
+        <div>
+          <h3>Research Director</h3>
+          <p class="org">Normal Lab, University of Chicago</p>
+          <p class="what">Managed a team of six predoctoral research assistants and several concurrent projects from planning to delivery, including budgets, grants, and compliance. Worked with the research team on the data workflows and survey instruments behind the lab's studies.</p>
+        </div>
+        <div class="dates">Feb 2023 – Sep 2026</div>
+      </li>
+      <li>
+        <div>
+          <h3>Senior Research Analyst</h3>
+          <p class="org">Energy and Environment Lab, University of Chicago</p>
+          <p class="what">Implemented randomization for an education program evaluation with UChicago's Expanding Discovery in Economics program. Analyzed whether notifying wastewater facilities of discharge violations was an effective intervention, in partnership with the U.S. EPA, and turned the results into recommendations for EPA stakeholders. Served as the lab's Data Steward.</p>
+        </div>
+        <div class="dates">Sep 2021 – Feb 2023</div>
+      </li>
+      <li>
+        <div>
+          <h3>MS, Computational Analysis and Public Policy</h3>
+          <p class="org">Harris School of Public Policy, University of Chicago</p>
+        </div>
+        <div class="dates">2019 – 2021</div>
+      </li>
+      <li>
+        <div>
+          <h3>BS, Economics</h3>
+          <p class="org">Lahore University of Management Sciences, Pakistan</p>
+          <p class="what">Graduated with High Distinction. Dean's List 2016–18.</p>
+        </div>
+        <div class="dates">2014 – 2018</div>
+      </li>
+    </ol>
+  </section>
+</div>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Research I've worked on with teams.</p>
+
+    <article class="proj">
+      <div class="shot"><img src="project1.png" alt="Figure from the gentrification project" onerror="this.parentNode.remove()"></div>
+      <div class="body">
+        <h3>Predicting Neighborhood Gentrification in the United States</h3>
+        <p class="tag">Machine learning across 24 U.S. cities</p>
+        <p class="desc">With Launa Greer, Marc Richardson, and Manasi Phadnis, we built a model that scores the socioeconomic status of every census tract in 24 cities. It then predicts which neighborhoods are likely to rise in status over five years, flagging where gentrification risk is highest.</p>
+        <div class="links">
+          <a href="gentrification-report.pdf">Read the paper</a>
+          <a href="https://github.com/FatimaAzmat/Urban_Gentrification" rel="noopener">View the code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="shot"><img src="project2.png" alt="Figure from the CPEC project" onerror="this.parentNode.remove()"></div>
+      <div class="body">
+        <h3>Economic Assessment of CPEC: The Case of a Power Project</h3>
+        <p class="tag">Social cost-benefit analysis of a coal plant in Pakistan</p>
+        <p class="desc">With Syed M. Hasan, Hamza Ali, and Suniya Raza, we weighed the environmental costs of the Sahiwal Coal Power Project against the energy shortfall it relieves over 30 years. The plant is a net benefit at the lower bound of the social cost of carbon and a net loss at the upper bound. Published in <em>China's Belt and Road Initiative in a Global Context, Volume II</em> (Palgrave Macmillan, 2020).</p>
+        <div class="links">
+          <a href="https://www.tccim.ir/images/docs/ChinaBeltandRoadInitiativeinaGlobalContext.pdf#page=63" target="_blank" rel="noopener">Read the paper</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="contact" id="contact">
+    <h2>Find me online.</h2>
+    <div class="elsewhere">
+      <a href="https://github.com/FatimaAzmat">GitHub</a>
+      <a href="https://www.linkedin.com/in/fatimaazmat/">LinkedIn</a>
+    </div>
+  </section>
+  <footer>© 2026 Fatima Azmat</footer>
+</div>
+
+</body>
+</html>
